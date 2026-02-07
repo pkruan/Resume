@@ -1,78 +1,36 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Resume Profile Generator</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-  padding: 20px;
-}
-
-.container {
-  max-width: 500px;
-  margin: auto;
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-input, textarea, button {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: none;
-}
-
-textarea {
-  height: 80px;
-}
-
-button {
-  background: #22c55e;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #16a34a;
-}
-
-#result {
-  margin-top: 15px;
-  padding: 10px;
-  background: black;
-  border-radius: 8px;
-  min-height: 80px;
-  white-space: pre-line;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Profile Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <h1>AI Resume Profile Generator</h1>
 
-<div class="container">
-  <h2>AI Resume Profile Generator</h2>
+  <input id="name" placeholder="ชื่อ"><br>
+  <input id="job" placeholder="อาชีพ / ตำแหน่งงาน"><br>
+  <input id="skills" placeholder="ทักษะ (เช่น HTML, Marketing, Sales)"><br>
+  <textarea id="experience" placeholder="ประสบการณ์ทำงาน"></textarea><br>
+  <textarea id="goal" placeholder="เป้าหมายในอนาคต"></textarea><br>
 
-  <input id="name" placeholder="ชื่อ">
-  <input id="job" placeholder="อาชีพ / ตำแหน่งงาน">
-  <input id="skills" placeholder="ทักษะ เช่น HTML, Marketing, Sales">
-  <textarea id="experience" placeholder="ประสบการณ์ทำงาน"></textarea>
-  <textarea id="goal" placeholder="เป้าหมายในอนาคต"></textarea>
+  <h3>เลือกสไตล์ Resume</h3>
+  <button onclick="setStyle('pro')">Professional</button>
+  <button onclick="setStyle('creative')">Creative</button>
+  <button onclick="setStyle('startup')">Startup Founder</button>
+
+  <br><br>
 
   <button onclick="generateProfile()">Generate Profile</button>
+  <button onclick="copyResume()">Copy Resume</button>
+  <button onclick="downloadResume()">Download .txt</button>
+  <button onclick="toggleMode()">Dark / Light</button>
 
-  <h3>ผลลัพธ์:</h3>
-  <div id="result"></div>
-</div>
+  <h2>ผลลัพธ์:</h2>
+  <pre id="result"></pre>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
