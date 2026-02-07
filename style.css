@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #0f172a;
+  color: white;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 5px 0;
+  padding: 8px;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  background: #22c55e;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+pre {
+  background: black;
+  padding: 10px;
+  border-radius: 8px;
+}
