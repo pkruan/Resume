@@ -3,56 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume Profile Generator</title>
+<title>AI Resume Profile Generator</title>
+
 <style>
-body{font-family:Arial;background:#0f172a;color:white;padding:20px}
-.container{max-width:600px;margin:auto;background:#111827;padding:20px;border-radius:12px}
-input,textarea,button{width:100%;padding:10px;margin:6px 0;border-radius:6px;border:none}
-button{background:#22c55e;color:black;font-weight:bold}
-#result{white-space:pre-wrap;background:black;padding:10px;border-radius:8px;margin-top:10px}
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+textarea {
+  height: 80px;
+}
+
+button {
+  background: #22c55e;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+#result {
+  margin-top: 15px;
+  padding: 10px;
+  background: black;
+  border-radius: 8px;
+  min-height: 80px;
+  white-space: pre-line;
+}
 </style>
+
 </head>
 <body>
 
 <div class="container">
-<h2>AI Resume Profile Generator</h2>
+  <h2>AI Resume Profile Generator</h2>
 
-<input id="name" placeholder="ชื่อ">
-<input id="job" placeholder="อาชีพ / ตำแหน่งงาน">
-<textarea id="skills" placeholder="ทักษะ (เช่น HTML, Marketing, Sales)"></textarea>
-<textarea id="exp" placeholder="ประสบการณ์ทำงาน"></textarea>
-<textarea id="goal" placeholder="เป้าหมายงานในอนาคต"></textarea>
+  <input id="name" placeholder="ชื่อ">
+  <input id="job" placeholder="อาชีพ / ตำแหน่งงาน">
+  <input id="skills" placeholder="ทักษะ เช่น HTML, Marketing, Sales">
+  <textarea id="experience" placeholder="ประสบการณ์ทำงาน"></textarea>
+  <textarea id="goal" placeholder="เป้าหมายในอนาคต"></textarea>
 
-<button onclick="generate()">Generate Profile</button>
+  <button onclick="generateProfile()">Generate Profile</button>
 
-<h3>ผลลัพธ์:</h3>
-<div id="result"></div>
+  <h3>ผลลัพธ์:</h3>
+  <div id="result"></div>
 </div>
 
-<script>
-function generate(){
-  let name = nameInput();
-  let job = jobInput();
-  let skills = skillsInput();
-  let exp = expInput();
-  let goal = goalInput();
-
-  let profile = `
-${name} is a professional ${job} with strong skills in ${skills}.
-With experience in ${exp}, ${name} is passionate about growth and continuous improvement.
-Future goal: ${goal}.
-  `;
-
-  document.getElementById("result").innerText = profile;
-}
-
-function nameInput(){return document.getElementById("name").value;}
-function jobInput(){return document.getElementById("job").value;}
-function skillsInput(){return document.getElementById("skills").value;}
-function expInput(){return document.getElementById("exp").value;}
-function goalInput(){return document.getElementById("goal").value;}
-</script>
-
-<script src="script.js"></script>  
+<script src="script.js"></script>
 </body>
 </html>
